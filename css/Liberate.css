@@ -1,0 +1,482 @@
+.ModuleHeaderTit {
+	display:none;
+	height:240px;
+}
+
+#OuterHeader {
+	width:100%;
+	height:90px;
+	position:fixed;
+	background:#fff;
+	top:0;
+	left:0;
+}
+
+#crono {
+background:#ececec;
+text-align:center;
+padding:10px;
+}
+
+#apartado {
+font-family:Helvetica,Arial,sans-serif;
+font-size:25px;
+color:#db032c;
+text-align:left;
+font-weight:700;
+padding-bottom:15px;
+}
+
+#agente {
+background:none;
+width:147px;
+height:380px;
+float:right;
+margin:0 40px 50px 60px;
+}
+
+.Espacio {
+clear:both;
+}
+
+#Calculadora {
+margin:auto;
+}
+
+.ModuleContent {
+margin:auto;
+padding:0 0 30px;
+}
+
+h3.Solicitante span {
+font-size:13px;
+margin-left:20px;
+}
+
+h3.Resultado {
+font-size:22px;
+color:#666;
+line-height:35px;
+padding-left:0;
+text-align:left;
+font-family:Helvetica,Arial,sans-serif;
+margin-bottom:15px;
+margin-top:0;
+padding-top:0;
+}
+
+.LabelCalc {
+	width: 45%;
+	margin-right: 3%;
+	float: left;
+	text-align: right;
+	font-size: 13px;
+	line-height: 40px;
+}
+
+.DivInputCalc,.DivInputCalc3 {
+width:141px;
+height:25px;
+float:left;
+margin:3px 5px 3px 0;
+padding:3px;
+}
+
+.DivInputCalc2 {
+width:260px;
+height:25px;
+float:left;
+margin:3px 0 0 6px;
+padding:3px;
+}
+
+.CalcAc,.CalcAc2,.CalcAc3 {
+font-size:13px;
+float:left;
+line-height:29px;
+font-family:Helvetica,Arial,sans-serif;
+color:#444;
+margin:3px 0;
+}
+
+.LabelResultados {
+width:45%;
+margin-right:3%;
+float:left;
+text-align:right;
+font-family:Helvetica,Arial,sans-serif;
+font-size:13px;
+line-height:20px;
+color:#444;
+}
+
+.LabelResultados2 {
+width:45%;
+margin-right:3%;
+float:left;
+text-align:right;
+font-family:Helvetica,Arial,sans-serif;
+font-size:15px;
+line-height:20px;
+color:#444;
+font-weight:700;
+}
+
+.CantResultados {
+font-size:13px;
+float:left;
+line-height:20px;
+font-family:Helvetica,Arial,sans-serif;
+color:#444;
+width:80px;
+margin:3px 0;
+}
+
+.CantResultados2 {
+font-size:15px;
+float:left;
+line-height:20px;
+font-family:Helvetica,Arial,sans-serif;
+color:#444;
+width:80px;
+font-weight:700;
+margin:3px 0;
+}
+
+.ACResultados {
+font-size:13px;
+float:left;
+line-height:20px;
+font-family:Helvetica,Arial,sans-serif;
+color:#444;
+margin:3px 0;
+}
+
+.DividerResultados {
+height:15px;
+font-size:1px;
+}
+
+.CalcChecks {
+max-width:400px;
+font-family:Helvetica, Arial, sans-serif;
+color:#444;
+font-size:12px;
+margin:3px auto;
+}
+
+.HipotecaDiv,.NuevaHipoteca {
+margin-bottom:0;
+padding:0 10px 35px;
+}
+
+.PrestamosDiv,.SolicitanteDiv {
+margin-bottom:0;
+padding:0 10px 35px;
+}
+
+
+#pink {
+height:23px;
+font-size:1px;
+}
+
+.NuevaHipoteca {
+background:#fff;
+border:1px solid #666;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+}
+
+#botones {
+background-color:#ececec;
+-moz-border-radius:0 0 10px 10px;
+-webkit-border-radius:0 0 10px 10px;
+border-radius:0 0 10px 10px;
+padding-bottom:10px;
+text-align:center;
+}
+
+.ModExp {
+width:180px;
+float:left;
+text-align:left;
+}
+
+.EXP {
+font-family:Helvetica, Arial, sans-serif;
+color:#757579;
+font-size:12px;
+line-height:30px;
+}
+
+.EXP2 {
+font-family:Helvetica, Arial, sans-serif;
+color:#757579;
+font-size:12px;
+}
+
+.CajaSolicitud {
+	height: 30px;
+	width: 250px;
+}
+
+.ModuleInputTD {
+text-align:center;
+padding:5px;
+}
+
+.ModuleInputTD4 {
+padding:5px 5px 5px 15px;
+}
+
+.Mastitular {
+font-size:12px;
+line-height:30px;
+}
+
+.Mastitular a,.Mastitular a:link,.Mastitular a:active,.Mastitular a:visited,.Mastitular a:Hover {
+font-size:12px;
+line-height:30px;
+color:#db032c;
+}
+
+.HeaderViable,.HeaderPosible,.HeaderNoviable {
+height:155px;
+padding:5px 5px 0 0;
+}
+
+.HeaderNoviable {
+background:none;
+height:250px;
+}
+
+.GraciasCalc {
+background-color:#db032c;
+height:55px;
+-moz-border-radius:10px;
+-webkit-border-radius:10px;
+border-radius:10px;
+padding:20px 50px;
+}
+
+.Semaforo {
+width:50px;
+height:155px;
+float:left;
+padding:0 20px;
+}
+
+.Enhorabuena,.LoSentimos {
+font-family:Helvetica, Arial, sans-serif;
+color:#444;
+font-size:22px;
+font-weight:700;
+padding-bottom:20px;
+}
+
+.AvisoCalc {
+font-family:Helvetica, Arial, sans-serif;
+font-size:16px;
+color:#444;
+}
+
+.NuevaRefi {
+font-weight:700;
+font-size:20px;
+color:#db032c;
+}
+
+.viable {
+color:#36E50D;
+}
+
+.posible {
+color:#F60;
+}
+
+.no_viable {
+color:red;
+}
+
+.inner_Hipo {
+background-color:#ececec;
+padding:0 20px;
+}
+
+.inner_solicitud {
+background-color:#ececec;
+padding:20px;
+}
+
+.clausulas {
+font-size:14px;
+}
+
+.clausulas a,.clausulas a:link,.clausulas a:active,.clausulas a:visited {
+color:#db032c;
+text-decoration:none;
+}
+
+.clausulas a:hover {
+color:#757579;
+text-decoration:underline;
+}
+
+.Gris {
+background:#f6f4f5;
+font-size:.9em;
+height:auto;
+margin:20px 0;
+padding:20px 0;
+}
+
+.Blanco {
+background:#fff;
+font-size:.9em;
+height:auto;
+margin:20px 0;
+padding:20px 0;
+}
+
+.Leftside {
+width:610px;
+margin-left:376px;
+}
+
+#video {
+text-align:center;
+padding-top:20px;
+}
+
+#video iframe {
+width:100%;
+height:250px;
+}
+
+#col3 {
+float:left;
+width:44%;
+font-family:Helvetica,Arial,sans-serif;
+font-size:.9em;
+text-align:justify;
+line-height:1.2em;
+padding:15px 60px 15px 0;
+}
+
+#col3c {
+float:left;
+width:44%;
+font-family:Helvetica,Arial,sans-serif;
+font-size:.9em;
+text-align:justify;
+line-height:1.2em;
+padding:15px 0;
+}
+
+.negrita {
+font-weight:700;
+}
+
+#copy {
+width:45%;
+float:left;
+font-size:.8em;
+padding:60px 0 30px;
+}
+
+.reacciona {
+text-align:right;
+width:450%;
+padding-top:100px;
+float:right;
+}
+
+#ancla-calcula {
+top:0;
+}
+
+#ancla-funciona {
+top:1000px;
+}
+
+#ancla-quienes {
+top:1300px;
+}
+
+#ancla-trabajamos {
+top:1800px;
+}
+
+#ancla-grupo {
+top:2500px;
+}
+
+#barraaceptacion {
+display:none;
+position:fixed;
+left:0;
+right:0;
+bottom:0;
+padding-bottom:20px;
+width:100%;
+text-align:center;
+min-height:40px;
+background-color:rgba(0,0,0,0.5);
+color:#fff;
+z-index:99999;
+}
+
+.inner {
+width:100%;
+position:absolute;
+padding-left:5px;
+font-family:verdana;
+font-size:12px;
+top:30%;
+}
+
+.inner a.ok {
+color:#00ff2e;
+text-decoration:none;
+padding:4px;
+}
+
+.inner a.info {
+padding-left:5px;
+text-decoration:none;
+color:#faff00;
+}
+
+.anclas {
+width:100%;
+max-width:10px;
+height:90px!important;
+position:absolute;
+left:0;
+display:inline-block;
+clear:both;
+z-index:1;
+margin:0;
+padding:0;
+}
+
+#HeaderContent,.contenido {
+width:990px;
+margin:auto;
+}
+
+#menu,#mobilemenu {
+display:none;
+}
+
+.CajaModulo,.SelectModulo {
+font-size:13px;
+height:30px;
+width:90%;
+}
+
+.HeaderViable,.HeaderPosible {
+background:none;
+}

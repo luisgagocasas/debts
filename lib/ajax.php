@@ -3,6 +3,8 @@ class Ajax {
   public function __construct() {
     add_action('wp_ajax_formDebt', [$this, 'formDebt']);
     add_action('wp_ajax_nopriv_formDebt', [$this, 'formDebt']);
+    add_action('wp_ajax_formValidate', [$this, 'formValidate']);
+    add_action('wp_ajax_nopriv_formValidate', [$this, 'formValidate']);
   }
 
   function ownName($cadena) {
@@ -13,10 +15,9 @@ class Ajax {
   public function formDebt() {
     global $wpdb;
 
-    $name = $_POST['name'];
+    $name = $this->ownName($_POST['name']);
     $HipotecaPendiente = $_POST['HipotecaPendiente'];
     $HipotecaMensual = $_POST['HipotecaMensual'];
-    // $first_name = $this->ownName($_POST['first_name']);
 
     $person_model = array(
       'name' => $name,
@@ -32,6 +33,24 @@ class Ajax {
       echo 'error';
     }
     wp_die();
+  }
+
+  public function formValidate() {
+    $nonce = sanitize_text_field( $_POST['nonceT'] );
+    $hola = wp_strip_all_tags($_POST['hola']);
+
+    if (wp_verify_nonce( $nonce, 'debt') &&  $hola)  {
+      $data = array(
+        "mensaje"  =>  $hola
+      );
+
+    } else {
+      $data = array(
+        "status"  =>  false,
+        "message"  =>  "nonce fail"
+      );
+    }
+    wp_send_json($data);
   }
 }
 
