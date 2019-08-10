@@ -1,6 +1,6 @@
 <?php
 global $table_debt;
-$table_debt = '0.1';
+$table_debt = '0.2';
 
 function debt_table_install() {
   global $wpdb;
