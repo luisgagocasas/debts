@@ -52,7 +52,13 @@ class initDebt {
     $notice = '';
     $default = array(
       'id' => 0,
-      'name' => '',
+      'Nombre'=> '',
+      'Apellidos'=> '',
+      'CorreoE'=> '',
+      'Movil'=> '',
+      'Fijo'=> '',
+      'Postal'=> '',
+      'Provincia'=> '',
       'HipotecaPendiente' => '',
       'HipotecaMensual' => '',
       'ValorVivienda' => '',
@@ -72,7 +78,13 @@ class initDebt {
           echo "hola: ". $item['id'];
           $result = $wpdb->insert("{$wpdb->prefix}debt",
             array(
-              'name'=> $item['name'],
+              'Nombre'=> $item['Nombre'],
+              'Apellidos'=> $item['Apellidos'],
+              'CorreoE'=> $item['CorreoE'],
+              'Movil'=> $item['Movil'],
+              'Fijo'=> $item['Fijo'],
+              'Postal'=> $item['Postal'],
+              'Provincia'=> $item['Provincia'],
               'HipotecaPendiente'=> $item['HipotecaPendiente'],
               'HipotecaMensual' => $item['HipotecaMensual'],
               'ValorVivienda' => $item['ValorVivienda'],
@@ -95,7 +107,13 @@ class initDebt {
           $result = $wpdb->update("{$wpdb->prefix}debt",
             array(
               'id'=> $item['id'],
-              'name'=> $item['name'],
+              'Nombre'=> $item['Nombre'],
+              'Apellidos'=> $item['Apellidos'],
+              'CorreoE'=> $item['CorreoE'],
+              'Movil'=> $item['Movil'],
+              'Fijo'=> $item['Fijo'],
+              'Postal'=> $item['Postal'],
+              'Provincia'=> $item['Provincia'],
               'HipotecaPendiente'=> $item['HipotecaPendiente'],
               'HipotecaMensual' => $item['HipotecaMensual'],
               'ValorVivienda' => $item['ValorVivienda'],
@@ -203,66 +221,116 @@ class initDebt {
       <tbody>
         <tr class="form-field">
           <th valign="top" scope="row">
-            <label for="name">Name</label>
+            <label for="Nombre">Name</label>
           </th>
           <td>
-            <input id="name" name="name" type="text" style="width: 95%" value="<?php echo esc_attr($item['name']); ?>" size="50" class="code" required>
+            <input id="Nombre" name="Nombre" type="text" style="width: 95%" value="<?php echo esc_attr($item['Nombre']); ?>" size="50" class="code" required>
           </td>
+          <th valign="top" scope="row">
+            <label for="Apellidos">Apellidos</label>
+          </th>
+          <td>
+            <input id="Apellidos" name="Apellidos" type="text" style="width: 95%" value="<?php echo esc_attr($item['Apellidos']); ?>" size="50" class="code" required>
+          </td>
+        </tr>
+        <tr class="form-field">
+          <th valign="top" scope="row">
+            <label for="CorreoE">CorreoE</label>
+          </th>
+          <td>
+            <input id="CorreoE" name="CorreoE" type="text" style="width: 95%" value="<?php echo esc_attr($item['CorreoE']); ?>" size="50" class="code" required>
+          </td>
+          <th valign="top" scope="row">
+            <label for="Movil">Movil</label>
+          </th>
+          <td>
+            <input id="Movil" name="Movil" type="text" style="width: 95%" value="<?php echo esc_attr($item['Movil']); ?>" size="50" class="code" required>
+          </td>
+        </tr>
+        <tr class="form-field">
+          <th valign="top" scope="row">
+            <label for="Fijo">Fijo</label>
+          </th>
+          <td>
+            <input id="Fijo" name="Fijo" type="text" style="width: 95%" value="<?php echo esc_attr($item['Fijo']); ?>" size="50" class="code" required>
+          </td>
+          <th valign="top" scope="row">
+            <label for="Postal">Postal</label>
+          </th>
+          <td>
+            <input id="Postal" name="Postal" type="text" style="width: 95%" value="<?php echo esc_attr($item['Postal']); ?>" size="50" class="code" required>
+          </td>
+        </tr>
+        <tr class="form-field">
+          <th valign="top" scope="row">
+            <label for="Provincia">Provincia</label>
+          </th>
+          <td>
+            <input id="Provincia" name="Provincia" type="text" style="width: 95%" value="<?php echo esc_attr($item['Provincia']); ?>" size="50" class="code" required>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <hr>
+    <table cellspacing="2" cellpadding="5" style="width: 100%;" class="form-table">
+      <tbody>
+        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="HipotecaPendiente">HipotecaPendiente</label>
           </th>
           <td>
             <input id="HipotecaPendiente" name="HipotecaPendiente" type="text" style="width: 95%" value="<?php echo esc_attr($item['HipotecaPendiente']); ?>" size="50" class="code" required>
           </td>
-        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="HipotecaMensual">HipotecaMensual</label>
           </th>
           <td>
             <input id="HipotecaMensual" name="HipotecaMensual" type="text" style="width: 95%" value="<?php echo esc_attr($item['HipotecaMensual']); ?>" size="50" class="code" required>
           </td>
+        </tr>
+        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="ValorVivienda">ValorVivienda</label>
           </th>
           <td>
             <input id="ValorVivienda" name="ValorVivienda" type="text" style="width: 95%" value="<?php echo esc_attr($item['ValorVivienda']); ?>" size="50" class="code" required>
           </td>
-        </tr>
-        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="Prestamo">Prestamo</label>
           </th>
           <td>
             <input id="Prestamo" name="Prestamo" type="text" style="width: 95%" value="<?php echo esc_attr($item['Prestamo']); ?>" size="50" class="code" required>
           </td>
+        </tr>
+        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="PrestamoMensual">PrestamoMensual</label>
           </th>
           <td>
             <input id="PrestamoMensual" name="PrestamoMensual" type="text" style="width: 95%" value="<?php echo esc_attr($item['PrestamoMensual']); ?>" size="50" class="code" required>
           </td>
-        </tr>
-        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="TitularEdad">TitularEdad</label>
           </th>
           <td>
             <input id="TitularEdad" name="TitularEdad" type="text" style="width: 95%" value="<?php echo esc_attr($item['TitularEdad']); ?>" size="50" class="code" required>
           </td>
+        </tr>
+        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="TitularIngresosMes">TitularIngresosMes</label>
           </th>
           <td>
             <input id="TitularIngresosMes" name="TitularIngresosMes" type="text" style="width: 95%" value="<?php echo esc_attr($item['TitularIngresosMes']); ?>" size="50" class="code" required>
           </td>
-        </tr>
-        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="ddlTitularPagas">ddlTitularPagas</label>
           </th>
           <td>
             <input id="ddlTitularPagas" name="ddlTitularPagas" type="text" style="width: 95%" value="<?php echo esc_attr($item['ddlTitularPagas']); ?>" size="50" class="code" required>
           </td>
+        </tr>
+        <tr class="form-field">
           <th valign="top" scope="row">
             <label for="ddlTitularContrato">ddlTitularContrato</label>
           </th>
@@ -278,7 +346,13 @@ class initDebt {
   function debt_table_example_validate_person($item) {
     $messages = array();
 
-    if (empty($item['name'])) $messages[] = 'Name name is required';
+    if (empty($item['Nombre'])) $messages[] = 'Name name is required';
+    if (empty($item['Apellidos'])) $messages[] = 'Apellidos name is required';
+    if (empty($item['CorreoE'])) $messages[] = 'CorreoE name is required';
+    if (empty($item['Movil'])) $messages[] = 'Movil name is required';
+    if (empty($item['Fijo'])) $messages[] = 'Fijo name is required';
+    if (empty($item['Postal'])) $messages[] = 'Postal name is required';
+    if (empty($item['Provincia'])) $messages[] = 'Provincia name is required';
     if (empty($item['HipotecaPendiente'])) $messages[] = 'HipotecaPendiente name is required';
     if (empty($item['HipotecaMensual'])) $messages[] = 'HipotecaMensual is required';
     if (empty($item['ValorVivienda'])) $messages[] = 'ValorVivienda is required';

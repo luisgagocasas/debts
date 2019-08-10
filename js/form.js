@@ -46,16 +46,12 @@ jQuery(document).ready(function($) {
   });
   
   $('a#SolicitarRefi').click(function () {
-    console.log("data1");
     var mensajeValidacion;
-    console.log("data3: " + mensajeValidacion)
     mensajeValidacion = ValidarSolicitud();
     if (mensajeValidacion == '') {
-      console.log("data4")
       Solicitar();
     }
     else {
-      console.log("data5")
       alert(mensajeValidacion);
     }
     return false;
@@ -92,9 +88,6 @@ jQuery(document).ready(function($) {
 		if  (IngresoRefi2 == "") {IngresoRefi2 == 0}
 		jQuery("input[name='txtTitular2IngresosMes']").autoNumeric('init', {aSep: '.', aDec: ','});
 	}
-	
-	
-
 	
 	function ahorrorefinanciacion(){
 		
@@ -150,9 +143,6 @@ jQuery(document).ready(function($) {
 			if (Plazo >360){ Plazo = 360}
 			else{Plazo = 360}
 			}
-
-
-	 
 	 	InteresRefi = 3.5
 		AnnualInterestRateRefi = 3.5/100
 		YearsRefi = 30
@@ -197,8 +187,6 @@ jQuery(document).ready(function($) {
 			resultado = 'NoViable'
 				RefiNoViable()
 			}
-		
-
 	 }
 	 
 	 function RefiEsViable(){
@@ -297,18 +285,6 @@ jQuery(document).ready(function($) {
 			mensaje = mensaje + 'Debes escribir al menos un numero de telefono' + '\n'
 		}
 
-
-		/*if ((jQuery('input[name$="lblIdOrigenEntradaDesglose"]').val() == '64') || (jQuery('input[name$="lblIdOrigenEntradaDesglose"]').val() == '79')) {
-			if (jQuery('#txtDNICompra').val() == '') {
-				mensaje = mensaje + 'Debes escribir tu DNI.' + '\n'
-			}
-			else {
-				if (!validaCIFNIFNIE(jQuery('#txtDNICompra').val())) {
-					mensaje = mensaje + 'El DNI/CIF especificado no es vÃ¡lido.' + '\n'
-				}
-			}
-		}*/
-
 		if (jQuery('#CodPostalRefi').val() == '') {
 			mensaje = mensaje + 'Debes escribir tu codigo postal.' + '\n'
 		}
@@ -319,11 +295,7 @@ jQuery(document).ready(function($) {
 		
 		return mensaje
 	}
-	
-	
 
-		
-		
 	function SolicitaRefinancia(){
 		Nombre = jQuery('#NombreRefi').val();
 		Apellidos =jQuery('#ApellidosRefi').val();
@@ -407,13 +379,6 @@ jQuery(document).ready(function($) {
 		html += "<tr><td>Ingresos solicitantes:</td><td>" + IngresosTotales + "</td></tr>";
 		html += "<tr><td><strong>Cuota refinanciada</strong>:</td><td><strong>" + NuevaCuotaapagar + "</strong></td></tr>";
 		html += "<tr><td><strong>Ahorro mensual</strong>:</td><td><strong>" + AhorroConseguido + "</strong></td></tr>";
-
-//		Cuota tras refinanciar
-//		Ahorro
-		
-		
-		
-		
 		
 		html += "<tr><td>Cuota aproximada:</td><td>" + Compraposible + "</td></tr>";
 		html += "<tr><td colspan='2'><strong>Datos del solicitante:</strong></td></tr>";
@@ -431,7 +396,6 @@ jQuery(document).ready(function($) {
         html += "</table></td>";
 		document.form1.hdnDatos.value = html;
 		//jQuery('#hdnDatos').val(html);
-        //console.log(html);
         document.formulario.submit();
 		return true;
     }
@@ -660,12 +624,50 @@ function Solicitar() {
   // }
   // else {
   //   argumentos = argumentos + '",chkClausula:"' + '0'
-  //   argumentos = argumentos + '"}';
+	//   argumentos = argumentos + '"}';
+	
+		let HipotecaPendiente = jQuery("input[name='HipotecaPendiente']").val();
+		let HipotecaMensual = jQuery("input[name='HipotecaMensual']").val();
+		let ValorVivienda = jQuery("input[name='ValorVivienda']").val();
+		let Prestamo = jQuery("input[name='Prestamo']").val();
+		let PrestamoMensual = jQuery("input[name='PrestamoMensual']").val();
+		let TitularEdad = jQuery("input[name='TitularEdad']").val();
+		let TitularIngresosMes = jQuery("input[name='TitularIngresosMes']").val();
+		let ddlTitularPagas = jQuery("select[name='ddlTitularPagas']").val();
+		let ddlTitularContrato = jQuery("select[name='ddlTitularContrato']").val();
+
+		// personal
+		let Nombre = jQuery('#NombreRefi').val();
+		let Apellidos =jQuery('#ApellidosRefi').val();
+		let CorreoE = jQuery('#EmailRefi').val();
+		let Movil = jQuery('#MovilRefi').val();
+		let Fijo =jQuery('#FijoRefi').val();
+		let Provincia= jQuery('#ddlProvinciasRefi').val();
+		let Postal = jQuery('#CodPostalRefi').val();
 
     var fd = new FormData();
-    fd.append('action', 'formValidate');
+    fd.append('action', 'formDebt');
     fd.append('nonceT', data_nonce);
-    fd.append('hola', 'quetal');
+    fd.append('Nombre', Nombre);
+    fd.append('Apellidos', Apellidos);
+    fd.append('CorreoE', CorreoE);
+    fd.append('Movil', Movil);
+    fd.append('Fijo', Fijo);
+    fd.append('Provincia', Provincia);
+		fd.append('Postal', Postal);
+
+    fd.append('HipotecaPendiente', HipotecaPendiente);
+    fd.append('HipotecaMensual', HipotecaMensual);
+    fd.append('ValorVivienda', ValorVivienda);
+    fd.append('Prestamo', Prestamo);
+    fd.append('PrestamoMensual', PrestamoMensual);
+    fd.append('TitularEdad', TitularEdad);
+    fd.append('TitularIngresosMes', TitularIngresosMes);
+    fd.append('ddlTitularPagas', ddlTitularPagas);
+		fd.append('ddlTitularContrato', ddlTitularContrato);
+		
+		console.log("data1: ", ddlTitularPagas)
+		console.log("data1: ", ddlTitularContrato)
 
     jQuery.ajax({
       type: 'POST',

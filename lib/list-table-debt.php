@@ -8,7 +8,13 @@ function debt_table_install() {
 
   $sql = "CREATE TABLE " . $wpdb->prefix . "debt (
     id int(11) NOT NULL AUTO_INCREMENT,
-    name VARCHAR(200) NOT NULL,
+    Nombre VARCHAR(200) NOT NULL,
+    Apellidos VARCHAR(200) NOT NULL,
+    CorreoE VARCHAR(200) NOT NULL,
+    Movil VARCHAR(200) NOT NULL,
+    Fijo VARCHAR(200) NOT NULL,
+    Postal VARCHAR(200) NOT NULL,
+    Provincia VARCHAR(200) NOT NULL,
     HipotecaPendiente VARCHAR(200) NOT NULL,
     HipotecaMensual VARCHAR(200) NOT NULL,
     ValorVivienda VARCHAR(200) NOT NULL,
@@ -32,7 +38,13 @@ function debt_table_install() {
   if ($installed_ver != $table_debt) {
     $sql = "CREATE TABLE " . $wpdb->prefix . "debt (
       id int(11) NOT NULL AUTO_INCREMENT,
-      name VARCHAR(200) NOT NULL,
+      Nombre VARCHAR(200) NOT NULL,
+      Apellidos VARCHAR(200) NOT NULL,
+      CorreoE VARCHAR(200) NOT NULL,
+      Movil VARCHAR(200) NOT NULL,
+      Fijo VARCHAR(200) NOT NULL,
+      Postal VARCHAR(200) NOT NULL,
+      Provincia VARCHAR(200) NOT NULL,
       HipotecaPendiente VARCHAR(200) NOT NULL,
       HipotecaMensual VARCHAR(200) NOT NULL,
       ValorVivienda VARCHAR(200) NOT NULL,
@@ -95,14 +107,14 @@ class Debt_List_Table extends WP_List_Table {
     return $resources->nicetime($item['date_update']);
   }
 
-  function column_name($item) {
+  function column_Nombre($item) {
     $actions = array(
       'edit' => sprintf('<a href="?page=debt_form&id=%s"><strong>%s</strong></a>', $item['id'], 'Edit'),
       'delete' => sprintf('<a href="?page=%s&action=delete&id=%s"><strong>%s</strong></a>', $_REQUEST['page'], $item['id'], 'Delete'),
     );
 
     return sprintf('%s %s',
-      $item['name'],
+      $item['Nombre'],
       $this->row_actions($actions)
     );
   }
@@ -117,7 +129,7 @@ class Debt_List_Table extends WP_List_Table {
   function get_columns() {
     $columns = array(
       'cb' => '<input type="checkbox" />',
-      'name' =>'Nombre',
+      'Nombre' =>'Nombre',
       'date_create' => 'Fecha/Creado',
       'date_update' => 'Fecha/Actualizado',
     );
@@ -127,7 +139,7 @@ class Debt_List_Table extends WP_List_Table {
 
   function get_sortable_columns() {
     $sortable_columns = array(
-      'name' => array('name', true),
+      'Nombre' => array('Nombre', true),
       'date_create' => array('date_create', false),
       'date_update' => array('date_update', false),
     );
