@@ -13,8 +13,11 @@
 */
 
 include_once('lib/init_debt.php');
+include_once('lib/init_credit_end.php');
 include_once('lib/resources.php');
-include_once('lib/shortcode.php');
+include_once('lib/shortcode_debt.php');
+include_once('lib/shortcode_credit_end.php');
+include_once('ajax.php');
 if ( ! defined( 'ABSPATH' ) )
   exit;
 
@@ -22,7 +25,9 @@ if ( !class_exists( 'debt' ) ) {
   class debt {
     function __construct() {
       new initDebt();
-      new shortcode();
+      new initCreditEnd();
+      new shortCodeDebt();
+      new shortcodeCreditEnd();
     }
   }
 }

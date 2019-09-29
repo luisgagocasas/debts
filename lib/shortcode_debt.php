@@ -1,7 +1,5 @@
 <?php
-include_once('ajax.php');
-
-class shortcode {
+class shortCodeDebt {
   public function __construct() {
     add_shortcode( 'debt', array($this, 'shortcode_debt'));
   }
