@@ -1,6 +1,7 @@
 "use strict";
 var data_nonce = window.data_nonce;
 var data_url = window.data_url;
+var url_redirect = window.url_redirect;
 
 jQuery(document).ready(function($) {
   var form = $("#example-form");
@@ -63,6 +64,9 @@ jQuery(document).ready(function($) {
         success:function( r ) {
           if (r.state) {
             $("#message_return").html("Su información se a enviado correctamente.");
+            setTimeout(function() {
+              window.location = url_redirect;
+            }, 2000);      
           } else {
             $("#message_return").html("Se presento un error en su solicitud.");
           }
