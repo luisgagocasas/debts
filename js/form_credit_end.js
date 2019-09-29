@@ -1,5 +1,6 @@
 "use strict";
 var data_nonce = window.data_nonce;
+var data_url = window.data_url;
 
 jQuery(document).ready(function($) {
   var form = $("#example-form");
@@ -60,7 +61,11 @@ jQuery(document).ready(function($) {
         processData: false,
         error:function() {},
         success:function( r ) {
-          console.log('data2: ', r);
+          if (r.state) {
+            $("#message_return").html("Su información se a enviado correctamente.");
+          } else {
+            $("#message_return").html("Se presento un error en su solicitud.");
+          }
         },
       });
     }

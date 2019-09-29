@@ -94,7 +94,7 @@ class Ajax {
     $recibos = wp_strip_all_tags($_POST['recibos']);
     $faltapagar = wp_strip_all_tags($_POST['faltapagar']);
 
-    if (wp_verify_nonce( $nonce, 'debt'))  {
+    if (wp_verify_nonce( $nonce, 'nonceT'))  {
 
       $person_model = array(
         'name_user' => $name_user,
@@ -112,7 +112,7 @@ class Ajax {
       if ($debt_data) {
         $data = array(
           "state"  =>  true,
-          "data"  =>  $person_model
+          "data"   =>  $person_model
         );
       } else {
         $data = array(
@@ -120,11 +120,10 @@ class Ajax {
           "data"  =>  $person_model
         );
       }
-
     } else {
       $data = array(
         "status"  =>  false,
-        "message"  =>  "nonce fail"
+        "message" =>  "nonce fail"
       );
     }
     wp_send_json($data);

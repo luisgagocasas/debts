@@ -133,7 +133,7 @@ class initCreditEnd {
         <br>
       </div>
       <h2>
-        Debt
+        Credit End
         <a class="add-new-h2" href="<?php echo get_admin_url(get_current_blog_id(), 'admin.php?page=credit_end');?>">
           back to list
         </a>

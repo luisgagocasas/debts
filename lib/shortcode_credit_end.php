@@ -119,6 +119,7 @@ class shortcodeCreditEnd {
                 <input type="checkbox" name="acceptTerms" class="custom-control-input required" id="acceptTerms">
                 <label class="custom-control-label" for="acceptTerms">Aceptar las Políticas de privacidad</label>
               </div>
+              <div class="text-center message_return" id="message_return"></div>
             </div>
           </section>
       </div>

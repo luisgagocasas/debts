@@ -17,7 +17,7 @@ include_once('lib/init_credit_end.php');
 include_once('lib/resources.php');
 include_once('lib/shortcode_debt.php');
 include_once('lib/shortcode_credit_end.php');
-include_once('ajax.php');
+include_once('lib/ajax.php');
 if ( ! defined( 'ABSPATH' ) )
   exit;
 
