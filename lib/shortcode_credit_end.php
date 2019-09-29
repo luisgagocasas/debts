@@ -7,7 +7,6 @@ class shortcodeCreditEnd {
   function shortcode_credit_end($atts) {
     ob_start();
     wp_enqueue_style('leads/bootstrap.css', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css', false, null);
-    // wp_enqueue_script('beat/bootstrapcdn.js', '//stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', null, true);
     wp_enqueue_script('beat/jquery.validate.js', '//cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.js', null, true);
     wp_enqueue_script('beat/form_credit_end.js', plugins_url('../js/form_credit_end.js', __FILE__), ['jquery'], null, true);
     wp_enqueue_script('beat/jquery.steps.min.js', plugins_url('../js/jquery.steps.min.js', __FILE__), ['jquery'], null, true);
@@ -40,13 +39,13 @@ class shortcodeCreditEnd {
               <div class="form-row align-items-center">
                 <div class="col-auto my-1">
                   <div class="custom-control custom-radio mr-sm-2">
-                    <input type="radio" class="custom-control-input required" name="situaciones" id="situaciones_1">
+                    <input type="radio" class="custom-control-input required" name="situaciones" id="situaciones_1" value="Tengo una tarjeta, me falta mucho para pagar y siento que nunca acaba">
                     <label class="custom-control-label" for="situaciones_1">Tengo una tarjeta, me falta mucho para pagar y siento que nunca acaba</label>
                   </div>
                 </div>
                 <div class="col-auto my-1">
                   <div class="custom-control custom-radio mr-sm-2">
-                    <input type="radio" class="custom-control-input required" name="situaciones" id="situaciones_2">
+                    <input type="radio" class="custom-control-input required" name="situaciones" id="situaciones_2" value="He tenido una tarjeta y he pagado mucho dinero">
                     <label class="custom-control-label" for="situaciones_2">He tenido una tarjeta y he pagado mucho dinero</label>
                   </div>
                 </div>
@@ -57,8 +56,8 @@ class shortcodeCreditEnd {
           <section>
             <div class="center-step d-flex flex-column justify-content-center">
               <h3 class="text-center">Capital Inicial*</h3>
-              <label for="name">El saldo disponible</label>
-              <input id="name" name="name" type="number" class="required">
+              <label for="capital">El saldo disponible</label>
+              <input id="capital" name="capital" type="number" class="required">
             </div>
           </section>
           <h3></h3>
@@ -70,19 +69,19 @@ class shortcodeCreditEnd {
               <div class="form-row align-items-center">
                 <div class="col-12 my-1">
                   <div class="custom-control custom-radio mr-sm-2">
-                    <input type="radio" class="custom-control-input required" name="intereses" id="intereses_1">
+                    <input type="radio" class="custom-control-input required" name="intereses" id="intereses_1" value="Si el TAE es más del 20%">
                     <label class="custom-control-label" for="intereses_1">Sí, el TAE es más del 20%</label>
                   </div>
                 </div>
                 <div class="col-12 my-1">
                   <div class="custom-control custom-radio mr-sm-2">
-                    <input type="radio" class="custom-control-input required" name="intereses" id="intereses_2">
+                    <input type="radio" class="custom-control-input required" name="intereses" id="intereses_2" value="Si el TAE es menos del 20%">
                     <label class="custom-control-label" for="intereses_2">Sí, el TAE es menos del 20%</label>
                   </div>
                 </div>
                 <div class="col-12 my-1">
                   <div class="custom-control custom-radio mr-sm-2">
-                    <input type="radio" class="custom-control-input required" name="intereses" id="intereses_3">
+                    <input type="radio" class="custom-control-input required" name="intereses" id="intereses_3" value="No conozco y no se donde encontrarlo">
                     <label class="custom-control-label" for="intereses_3">No conozco y no se donde encontrarlo</label>
                   </div>
                 </div>
@@ -110,12 +109,12 @@ class shortcodeCreditEnd {
             <div class="center-step d-flex flex-column justify-content-center">
               <h3 class="text-center">¿Dónde te enviamos los resultados?</h3>
               <p>Déjanos tus datos y te enviaremos los intereses que puedes reclamar.</p>
-              <label for="NOMBRE">MI NOMBRE ES*</label>
-              <input id="NOMBRE" name="NOMBRE" type="text" class="required">
-              <label for="EMAIL">MI EMAIL ES*</label>
-              <input id="EMAIL" name="EMAIL" type="email" class="required">
-              <label for="TELEFONO">MI TELÉFONO ES*</label>
-              <input id="TELEFONO" name="TELEFONO" type="tel" class="required">
+              <label for="name_user">MI NOMBRE ES*</label>
+              <input id="name_user" name="name_user" type="text" class="required">
+              <label for="email_user">MI EMAIL ES*</label>
+              <input id="email_user" name="email_user" type="email" class="required">
+              <label for="phone_user">MI TELÉFONO ES*</label>
+              <input id="phone_user" name="phone_user" type="tel" class="required">
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" name="acceptTerms" class="custom-control-input required" id="acceptTerms">
                 <label class="custom-control-label" for="acceptTerms">Aceptar las Políticas de privacidad</label>
@@ -124,6 +123,10 @@ class shortcodeCreditEnd {
           </section>
       </div>
     </form>
+    <script>
+      var data_url='<?php echo admin_url('admin-ajax.php'); ?>';
+      var data_nonce='<?php echo wp_create_nonce('nonceT'); ?>'
+    </script>
     <?php
   }
 }

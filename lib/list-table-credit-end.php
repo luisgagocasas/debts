@@ -8,14 +8,14 @@ function credit_end_table_install() {
 
   $sql = "CREATE TABLE " . $wpdb->prefix . "credit_end (
     id int(11) NOT NULL AUTO_INCREMENT,
-    NombreFull VARCHAR(200) NOT NULL,
-    CorreoE VARCHAR(200) NOT NULL,
-    Movil VARCHAR(200) NOT NULL,
-    Situacion VARCHAR(200) NOT NULL,
-    CapitalInicial VARCHAR(200) NOT NULL,
-    Tae VARCHAR(200) NOT NULL,
-    CuantoPagado VARCHAR(200) NOT NULL,
-    CuantoFalta VARCHAR(200) NOT NULL,
+    name_user VARCHAR(200) NOT NULL,
+    email_user VARCHAR(200) NOT NULL,
+    phone_user VARCHAR(200) NOT NULL,
+    situaciones VARCHAR(200) NOT NULL,
+    capital VARCHAR(200) NOT NULL,
+    intereses VARCHAR(200) NOT NULL,
+    recibos VARCHAR(200) NOT NULL,
+    faltapagar VARCHAR(200) NOT NULL,
     date_create VARCHAR(10) NOT NULL,
     date_update VARCHAR(10) NOT NULL,
     PRIMARY KEY (id)
@@ -76,14 +76,14 @@ class Credit_End_List_Table extends WP_List_Table {
     return $resources->nicetime($item['date_update']);
   }
 
-  function column_Nombre($item) {
+  function column_name_user($item) {
     $actions = array(
       'edit' => sprintf('<a href="?page=credit_end_form&id=%s"><strong>%s</strong></a>', $item['id'], 'Edit'),
       'delete' => sprintf('<a href="?page=%s&action=delete&id=%s"><strong>%s</strong></a>', $_REQUEST['page'], $item['id'], 'Delete'),
     );
 
     return sprintf('%s %s',
-      $item['Nombre'],
+      $item['name_user'],
       $this->row_actions($actions)
     );
   }
@@ -98,7 +98,7 @@ class Credit_End_List_Table extends WP_List_Table {
   function get_columns() {
     $columns = array(
       'cb' => '<input type="checkbox" />',
-      'Nombre' =>'Nombre',
+      'name_user' =>'Nombre y Apellidos',
       'date_create' => 'Fecha/Creado',
       'date_update' => 'Fecha/Actualizado',
     );
